@@ -1,0 +1,46 @@
+extends layout/layout
+
+block vars
+  - bodyClass = ""
+
+block title
+  | Demo
+
+mixin room(name, isAvailable, capacity, hasScreen)
+  - cssClass = !isAvailable ? ' room--unavailable' : ''
+  li.room(class=cssClass)
+    a.room__link(href="#")
+      h3.room__name #{name}
+      //if isAvailable
+      //  .room__dummy-button Book
+      - var timeLeft = Math.floor(Math.random() * 60) + 1
+      p.room__time #{timeLeft} mins
+      .room__has
+        p.room__screen
+          if hasScreen
+            | Screen
+        p.room__capacity
+          | #{capacity} Peeps
+
+
+block headerScripts
+
+block content
+
+
+  ul.rooms-container
+    li.rooms.rooms--available
+      h2.rooms__title Available
+      ul.rooms__list
+        +room('Fawcett', true, 2, false)
+        +room('Kitchen', true, 30 ,true)
+        +room('Kosambi', true, 3, true)
+        +room('Lovelace', true, 12, true)
+        +room('Wilberforce', true, 10, true)
+        +room('Zhou', true, 3, true)
+        +room('Zumbi', true, 3, true)
+    li.rooms.rooms--unavailable
+      h2.rooms__title Unavailable
+      ul.rooms__list
+        +room('Hidalgo', false, 3, true)
+        +room('Sankara', false, 2, false)

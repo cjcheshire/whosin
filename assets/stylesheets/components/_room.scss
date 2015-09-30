@@ -1,0 +1,146 @@
+$room-font-size-small: 1.8rem;
+$room-font-size--medium: 2.2rem;
+$room-font-size--large: 3rem;
+
+.rooms-container {
+  @include reset-list;
+  margin-top: 0;
+  margin-bottom: 0;
+
+  @include width-from($medium_device) {
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+  }
+}
+
+.rooms {
+  flex: 1;
+  margin-top: 0;
+  margin-bottom: 0;
+  @include width-from($medium_device) {
+    &:first-child {
+      margin-right: 0.2rem;
+    }
+  }
+  &--available {
+
+  }
+  &__title {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 1rem;
+
+    line-height: 1;
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    //letter-spacing: -0.025rem;
+    @include width-from($medium_device) {
+      //letter-spacing: -0.05rem;
+    }
+  }
+  &__list {
+    @include reset-list;
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    @include width-from($medium_device) {
+      height: 100vh;
+    }
+  }
+}
+
+.room {
+  position: relative;
+  min-height: 100px;
+  //flex: 1;
+  padding: 1rem;
+  margin-bottom: 0.2rem;
+  background-color: #57AA58;
+  color: #fff;
+  @include width-from($medium_device) {
+    min-height: 110px;
+  }
+  @include width-from($monster_large_device) {
+    min-height: 140px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &--unavailable {
+    background: #EA3E34;
+  }
+  &__link {
+    text-decoration: none;
+    color: inherit;
+  }
+  &__dummy-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.2rem 0.6rem;
+    background: white;
+    border-radius: 0.3rem;
+    color: #57AA58;
+    line-height: 1;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    //letter-spacing: -0.05rem;
+
+    @include width-from($medium_device) {
+    }
+  }
+  &__name {
+    margin-top: 0;
+    margin-bottom: 0.25rem;
+    line-height: 1;
+    font-size: $room-font-size-small;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: -0.05rem;
+    @include width-from($medium_device) {
+      font-size: $room-font-size--medium;
+    }
+    @include width-from($monster_large_device) {
+      font-size: $room-font-size--large;
+    }
+  }
+  &__has {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    text-align: right;
+  }
+  &__capacity {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 1.3;
+  }
+  &__screen {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 1.3;
+  }
+  &__time {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 1;
+    font-size: $room-font-size-small;
+    font-weight: 100;
+    text-transform: uppercase;
+    letter-spacing: -0.05rem;
+    @include width-from($medium_device) {
+      font-size: $room-font-size--medium;
+    }
+    @include width-from($monster_large_device) {
+      font-size: $room-font-size--large;
+    }
+  }
+}
