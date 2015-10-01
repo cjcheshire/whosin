@@ -13,8 +13,13 @@ mixin room(name, isAvailable, capacity, hasScreen)
       h3.room__name #{name}
       //if isAvailable
       //  .room__dummy-button Book
-      - var timeLeft = Math.floor(Math.random() * 60) + 1
-      p.room__time #{timeLeft} mins
+      - var timeLeft = Math.floor(Math.random() * 300) + 1
+      - timeText = isAvailable ? ' free' : ''
+      p.room__time
+        if timeLeft >= 60
+          | #{parseFloat((timeLeft/60).toFixed(1))} hours #{timeText}
+        else
+          | #{timeLeft} mins #{timeText}
       .room__has
         p.room__screen
           if hasScreen
