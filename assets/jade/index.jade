@@ -14,7 +14,7 @@ mixin room(name, isAvailable, capacity, hasScreen)
       //if isAvailable
       //  .room__dummy-button Book
       - var timeLeft = Math.floor(Math.random() * 300) + 1
-      - timeText = isAvailable ? ' free' : ''
+      - timeText = isAvailable ? ' free' : 'until free'
       p.room__time
         if timeLeft >= 60
           | #{parseFloat((timeLeft/60).toFixed(1))} hours #{timeText}
@@ -35,8 +35,8 @@ block content
 
   ul.rooms-container
     li.rooms.rooms--available
-      h2.rooms__title Available
       ul.rooms__list
+        li.rooms__title Available
         +room('Fawcett', true, 2, false)
         +room('Kitchen', true, 30 ,true)
         +room('Kosambi', true, 3, true)
@@ -45,7 +45,7 @@ block content
         +room('Zhou', true, 3, true)
         +room('Zumbi', true, 3, true)
     li.rooms.rooms--unavailable
-      h2.rooms__title Unavailable
       ul.rooms__list
+        li.rooms__title Unavailable
         +room('Hidalgo', false, 3, true)
         +room('Sankara', false, 2, false)
