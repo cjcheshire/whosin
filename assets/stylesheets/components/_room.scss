@@ -51,7 +51,7 @@ $description-font-size-medium: 1rem;
   &__list {
     @include reset-list;
     align-items: stretch;
-    display: flex;
+    //display: flex;
     flex-direction: column;
     @include width-from($large_device) {
       height: 100vh;
