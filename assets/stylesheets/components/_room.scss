@@ -149,7 +149,6 @@ $description-font-size-medium: 1rem;
     line-height: 1;
     font-size: $room-font-size--small;
     font-weight: normal;
-    text-transform: uppercase;
     letter-spacing: -0.025vw;
 
     @include width-from($large_device) {
