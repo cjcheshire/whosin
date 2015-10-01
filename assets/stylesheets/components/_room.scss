@@ -1,6 +1,7 @@
 $room-font-size-small: 1.8rem;
 $room-font-size--medium: 2.2rem;
 $room-font-size--large: 3rem;
+$room-font-size: calc(1.4vw + 1.4vh + 0.25vmin);
 
 .rooms-container {
   @include reset-list;
@@ -53,17 +54,17 @@ $room-font-size--large: 3rem;
 
 .room {
   position: relative;
-  min-height: 100px;
   //flex: 1;
   padding: 1rem;
-  margin-bottom: 0.2rem;
+    margin-bottom: 1px;
   background-color: #57AA58;
   color: #fff;
   @include width-from($medium_device) {
-    min-height: 110px;
+    min-height: calc(3vw + 3vh + 6vmin);
+    margin-bottom: 0.2rem;
   }
   @include width-from($monster_large_device) {
-    min-height: 140px;
+    //min-height: 140px;
   }
 
   &:last-child {
@@ -95,18 +96,12 @@ $room-font-size--large: 3rem;
   }
   &__name {
     margin-top: 0;
-    margin-bottom: 0.25rem;
+    margin-bottom: 1vh;
     line-height: 1;
-    font-size: $room-font-size-small;
+    font-size: $room-font-size;
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: -0.05rem;
-    @include width-from($medium_device) {
-      font-size: $room-font-size--medium;
-    }
-    @include width-from($monster_large_device) {
-      font-size: $room-font-size--large;
-    }
+    letter-spacing: -0.05vw;
   }
   &__has {
     position: absolute;
@@ -115,9 +110,28 @@ $room-font-size--large: 3rem;
     text-align: right;
   }
   &__capacity {
+    position: relative;
     margin-top: 0;
     margin-bottom: 0;
     line-height: 1.3;
+    //&:before {
+    //  content: '';
+    //  display: block;
+    //  position: absolute;
+    //  top: 0;
+    //  left: 0;
+    //  @include circle(0.6rem);
+    //  background: $white;
+    //}
+    //&:after {
+    //  content: '';
+    //  display: block;
+    //  position: absolute;
+    //  bottom: 0;
+    //  left: -0.05rem;
+    //  @include circle(0.8rem);
+    //  background: $white;
+    //}
   }
   &__screen {
     margin-top: 0;
@@ -125,22 +139,22 @@ $room-font-size--large: 3rem;
     line-height: 1.3;
   }
   &__time {
-    position: absolute;
-    bottom: 1rem;
-    left: 1rem;
+    //position: absolute;
+    //bottom: 1rem;
+    //left: 1rem;
 
     margin-top: 0;
     margin-bottom: 0;
     line-height: 1;
-    font-size: $room-font-size-small;
+    font-size: $room-font-size;
     font-weight: 100;
     text-transform: uppercase;
-    letter-spacing: -0.05rem;
+    letter-spacing: -0.05vw;
     @include width-from($medium_device) {
-      font-size: $room-font-size--medium;
+      //font-size: $room-font-size--medium;
     }
     @include width-from($monster_large_device) {
-      font-size: $room-font-size--large;
+      //font-size: $room-font-size--large;
     }
   }
 }
